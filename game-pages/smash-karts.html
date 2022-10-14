@@ -8,7 +8,7 @@
 <body style="background-color: #a8c4ff">
 <style>
 .padding {
-    padding-top: 60px;
+    padding-top: 40px;
 } 
 .text {
     position: absolute;
@@ -25,10 +25,38 @@
     border: 15px solid #061941;
     padding: 50px;
 }
+.button {
+  border: none;
+  color: #a8c4ff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.button1 {background-color: #000;} /* Green */
 </style>
 
 <title>Classes</title>
 
 <div class="padding">
-<p align="center"><iframe src="https://smashkarts.io/" style="height: 500px; width: 600px; border: none;"></iframe>
+<p align="center"><iframe src="https://smashkarts.io/" style="height: 500px; width: 600px; border: none;" id="iframe"></iframe>
 </div>
+
+<p align="center"><button class="button button1" onclick="openFullscreen();">Fullscreen</button>
+
+    <script>
+    var elem = document.getElementById("iframe");
+    function openFullscreen() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+    }
+    </script>
+    </p>
