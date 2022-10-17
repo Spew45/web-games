@@ -1,0 +1,137 @@
+<!DOCTYPE html><html><head><meta name="robots" content="noindex,nofollow,noarchive"/><link rel="preload" as="script" href="https://www.googletagservices.com/tag/js/gpt.js"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossOrigin"/><link rel="icon" type="image/png" sizes="16x16" href="https://now.gg/play/images/favicon.ico"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><meta charSet="utf-8"/><meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate"/><meta http-equiv="Pragma" content="no-cache"/><script>
+    if (typeof window !== 'undefined') {
+    (function() {
+      function createError(r){const e=new Error(r);return e.source="ulid",e}const ENCODING="0123456789ABCDEFGHJKMNPQRSTVWXYZ",ENCODING_LEN=ENCODING.length,TIME_MAX=Math.pow(2,48)-1,TIME_LEN=10,RANDOM_LEN=16;function replaceCharAt(r,e,t){return e>r.length-1?r:r.substr(0,e)+t+r.substr(e+1)}function incrementBase32(r){let e=void 0,t=r.length,n,o;for(var c=ENCODING_LEN-1;!e&&0<=t--;){if(n=r[t],o=ENCODING.indexOf(n),-1===o)throw createError("incorrectly encoded string");o!==c?e=replaceCharAt(r,t,ENCODING[o+1]):r=replaceCharAt(r,t,ENCODING[0])}if("string"==typeof e)return e;throw createError("cannot increment this string")}function randomChar(r){let e=Math.floor(r()*ENCODING_LEN);return e===ENCODING_LEN&&(e=ENCODING_LEN-1),ENCODING.charAt(e)}function encodeTime(r,e){if(isNaN(r))throw new Error(r+" must be a number");if(r>TIME_MAX)throw createError("cannot encode time greater than "+TIME_MAX);if(r<0)throw createError("time must be positive");if(!1===Number.isInteger(r))throw createError("time must be an integer");let t,n="";for(;0<e;e--)t=r%ENCODING_LEN,n=ENCODING.charAt(t)+n,r=(r-t)/ENCODING_LEN;return n}function encodeRandom(r,e){let t="";for(;0<r;r--)t=randomChar(e)+t;return t}function decodeTime(r){if(r.length!==TIME_LEN+RANDOM_LEN)throw createError("malformed ulid");r=r.substr(0,TIME_LEN).split("").reverse().reduce((r,e,t)=>{var n=ENCODING.indexOf(e);if(-1===n)throw createError("invalid character found: "+e);return r+n*Math.pow(ENCODING_LEN,t)},0);if(r>TIME_MAX)throw createError("malformed ulid, timestamp too large");return r}function detectPrng(r=!1,e){const t=(e=e||("undefined"!=typeof window?window:null))&&(e.crypto||e.msCrypto);if(t)return()=>{var r=new Uint8Array(1);return t.getRandomValues(r),r[0]/255};try{const n=require("crypto");return()=>n.randomBytes(1).readUInt8()/255}catch(r){}if(r){try{console.error("secure crypto unusable, falling back to insecure Math.random()!")}catch(r){}return()=>Math.random()}throw createError("secure crypto unusable, insecure Math.random not allowed")}function factory(e){return e=e||detectPrng(),function(r){return isNaN(r)&&(r=Date.now()),encodeTime(r,TIME_LEN)+encodeRandom(RANDOM_LEN,e)}}function monotonicFactory(t){t=t||detectPrng();let n=0,o;return function(r){if(isNaN(r)&&(r=Date.now()),r<=n){var e=o=incrementBase32(o);return encodeTime(n,TIME_LEN)+e}n=r;e=o=encodeRandom(RANDOM_LEN,t);return encodeTime(r,TIME_LEN)+e}}window.ulid=factory();
+      var Storage={valuesMap:new Map,getItem(a){var b=String(a);return this.valuesMap.has(a)?String(this.valuesMap.get(b)):null},setItem(a,b){this.valuesMap.set(String(a),String(b))},removeItem(a){this.valuesMap.delete(a)},clear(){this.valuesMap.clear()},key(a){if(!a)throw new TypeError("Failed to execute 'key' on 'Storage': 1 argument required, but only 0 present.");return this.valuesMap.get(a)},get length(){return this.valuesMap.size}}
+  
+      try {
+        localStorage.setItem("test", "test");
+        localStorage.removeItem("test");
+      } catch(e) {
+        Object.defineProperty(window, "localStorage", {
+          value: Object.assign({}, Storage),
+          configurable: !0,
+          enumerable: !0,
+          writable: !0
+        })
+      }
+  
+      try {
+        sessionStorage.setItem("test", "test");
+        sessionStorage.removeItem("test");
+      } catch(e) {
+        Object.defineProperty(window, "sessionStorage", {
+          value: Object.assign({}, Storage),
+          configurable: !0,
+          enumerable: !0,
+          writable: !0
+        })
+      }
+  
+      if (!localStorage.getItem("fe_uaId")) {
+        localStorage.setItem("fe_uaId", "ua-" + ulid());
+      }
+      if (!sessionStorage.getItem("fe_uaSessionId")) {
+        sessionStorage.setItem("fe_uaSessionId", "uasess-" + ulid());
+      }
+      if(window && window.history && window.history.pushState && window.location.href.indexOf("?") > -1) {
+        let g = new URL(window.location.href);
+          a = new URLSearchParams(g.search);
+          c = a.get("utm_source");
+        c && sessionStorage.setItem("utm_source", c);
+        let d = a.get("utm_campaign");
+        d && sessionStorage.setItem("utm_campaign", d);
+        let e = a.get("utm_medium");
+        e && sessionStorage.setItem("utm_medium", e);
+        let f = a.get("deep_link");
+        f && sessionStorage.setItem("deep_link", f);
+        var final = window.location.href.split("?")[0];
+        if (final != window.location.href) {
+          window.history.pushState(null, document.title, final);
+        }
+      }
+      window.gameInfo = {
+        id: 5349,
+        fsWidget: {
+          x: 40,
+          y: 15
+        }
+      }
+      const deviceType = !!(navigator.maxTouchPoints && navigator.maxTouchPoints > 2 && /MacIntel/.test(navigator.platform)) ? 'ipad' : '';
+      fetch("/api/play/v1/playReportEvent", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-ngg-fe-version": "berlin-v1.1.7.3"
+        },
+        body: JSON.stringify({
+          appId: 5349,
+          uaId: localStorage.getItem("fe_uaId") || "NA",
+          userType: "NA",
+          uaSessionId: sessionStorage.getItem("fe_uaSessionId") || "NA",
+          packageName: "com.roblox.client",
+          originTimestamp: new Date(),
+          eventName: "FeBootstrap",
+          extraData: {},
+          deviceType: deviceType || '',
+          utmSource: sessionStorage.getItem("utm_source") || "NA",
+          utmMedium: sessionStorage.getItem("utm_medium") || "NA",
+          utmCampaign: sessionStorage.getItem("utm_campaign") || "NA"
+        })
+      }).catch(e => {})
+    })()
+  }
+  </script><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no"/><meta name="robots" content="noindex"/><meta property="og:locale" content="en_US"/><meta property="og:title" content="Roblox"/><meta property="og:description" content="Play instantly in browser with now.gg"/><meta property="og:url" content="https://www.roblox.com/"/><meta property="og:site_name" content="https://www.roblox.com/"/><meta property="og:image:secure_url" itemProp="image" content="https://cdn.now.gg/apps-content/com.roblox.client/ogimage/roblox.jpg"/><meta property="og:image:width" content="1482"/><meta property="og:image:height" content="486"/><meta property="og:image:type" content="image/jpeg"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Roblox"/><meta name="twitter:description" content="Play instantly in browser with now.gg"/><meta name="twitter:image" content="https://cdn.now.gg/apps-content/com.roblox.client/ogimage/roblox.jpg"/><title>Play Roblox Online™</title><meta name="apple-mobile-web-app-title" content="Roblox"/><link rel="apple-touch-icon" href="https://cdn.now.gg/apps-content/com.roblox.client/pwa/Icon_192.png"/><meta name="description" content="Play Roblox android game in the browser on your PC or mobile. No download required."/><meta name="next-head-count" content="23"/><link rel="preload" href="/_next/static/css/d416084fb3952a3d.css" as="style"/><link rel="stylesheet" href="/_next/static/css/d416084fb3952a3d.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-48d9a6af8259b7f6.js" defer=""></script><script src="/_next/static/chunks/framework-d525afb76575d773.js" defer=""></script><script src="/_next/static/chunks/main-ad951e19b1fb2c5b.js" defer=""></script><script src="/_next/static/chunks/pages/_app-e5f366d4dce870d9.js" defer=""></script><script src="/_next/static/chunks/29107295-c6fe44319daee30e.js" defer=""></script><script src="/_next/static/chunks/609-516abe37d0342fd6.js" defer=""></script><script src="/_next/static/chunks/203-34671a01211f0ed5.js" defer=""></script><script src="/_next/static/chunks/625-1050234a72f8601e.js" defer=""></script><script src="/_next/static/chunks/pages/index-b390fa7fcaedd7a0.js" defer=""></script><script src="/_next/static/VCWLqw0J9zaLGEKruYOt-/_buildManifest.js" defer=""></script><script src="/_next/static/VCWLqw0J9zaLGEKruYOt-/_ssgManifest.js" defer=""></script><script src="/_next/static/VCWLqw0J9zaLGEKruYOt-/_middlewareManifest.js" defer=""></script><style data-styled="" data-styled-version="5.3.3">.lnbjNU{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100vw;height:100vh;background:url('https://cdn.now.gg/apps-content/com.roblox.client/banner/desktop/roblox.jpg') 100% 100% / cover no-repeat;background-position:center;background-repeat:no-repeat;background-size:cover;}/*!sc*/
+  .lnbjNU .drag-react.--mobile{touch-action:none;padding:8px;width:56px;border-bottom-right-radius:100px;border-bottom-left-radius:100px;}/*!sc*/
+  .lnbjNU .drag-react.--mobile.--show{background:#1F1637;border-top-left-radius:12px;border-top-right-radius:12px;pointer-events:all;}/*!sc*/
+  .lnbjNU .drag-react.--mobile.--hide{min-height:90px;background:rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.2);border-top-left-radius:8px;border-top-right-radius:8px;gap:16px;}/*!sc*/
+  body.rotate-screen .sc-5kk33t-0,body.portrait-mode .lnbjNU{width:100%;height:100%;background:url('https://cdn.now.gg/apps-content/com.roblox.client/banner/desktop/roblox.jpg') 80% 80% / cover no-repeat;}/*!sc*/
+  data-styled.g1[id="sc-5kk33t-0"]{content:"lnbjNU,"}/*!sc*/
+  *,*::after,*::before{box-sizing:border-box;}/*!sc*/
+  html{font-size:10px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;accent-color:#FF42A5;}/*!sc*/
+  body{margin:0;padding:0;font-family:'Poppins',sans-serif;-webkit-scrollbar-width:none;-moz-scrollbar-width:none;-ms-scrollbar-width:none;scrollbar-width:none;-ms-overflow-style:none;}/*!sc*/
+  h1,h2,h3,h4,h5,h6,p{margin:0 0 0.5em 0;}/*!sc*/
+  a{color:#fff;}/*!sc*/
+  a:visited,a:hover,a:focused{color:#fff;}/*!sc*/
+  ::-webkit-scrollbar{display:none;width:0px;}/*!sc*/
+  input[type="checkbox" i]{width:16px;height:16px;cursor:pointer;outline:1px solid #FF42A5;}/*!sc*/
+  label:focus-within{border:none;outline:1px solid #FF42A5;}/*!sc*/
+  body{overflow:hidden;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100vw;height:100vh;}/*!sc*/
+  @media only screen and (orientation:portrait){body.rotate-screen{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg);-webkit-transform-origin:bottom left;-ms-transform-origin:bottom left;transform-origin:bottom left;position:absolute;top:-100vw;height:100vw;width:100vmax;background:#000000;overflow:hidden;}}/*!sc*/
+  @media only screen and (orientation:landscape) and (max-height:575.98px){body.portrait-mode{-webkit-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg);-webkit-transform-origin:top right;-ms-transform-origin:top right;transform-origin:top right;position:absolute;top:0;right:100vw;height:100vw;width:100vh;background:black !important;overflow:hidden;}}/*!sc*/
+  body #__next{width:100%;height:100%;}/*!sc*/
+  .overlayKey{position:absolute;min-width:25px;text-align:center;-webkit-transition:left 0.1s ease-in-out,top 0.1s ease-in-out;transition:left 0.1s ease-in-out,top 0.1s ease-in-out;z-index:1;opacity:0.75;pointer-events:none;}/*!sc*/
+  .overlayKey.MOBASkill .overlayKeyValue:not(.MobaText),.overlayKey.LBM .overlayKeyValue:not(.MobaText){background:none;border:none;}/*!sc*/
+  .overlayKey.MOBASkill .overlayKeyValue:not(.MobaText) img,.overlayKey.LBM .overlayKeyValue:not(.MobaText) img{width:26px;}/*!sc*/
+  .overlayKey.FreeLook.gamepad .overlayKeyValue{position:absolute;}/*!sc*/
+  .overlayKey.Dpad > span{position:absolute;}/*!sc*/
+  .overlayKey.Pan::before,.overlayKey.Pan::after{content:"";}/*!sc*/
+  .overlayKey.Pan::before{height:78px;width:1px;position:absolute;background:white;-webkit-transform:translate3d(-20px,-37px,10px);-ms-transform:translate3d(-20px,-37px,10px);transform:translate3d(-20px,-37px,10px);}/*!sc*/
+  .overlayKey.Pan::after{width:78px;height:1px;position:absolute;background:white;-webkit-transform:translate3d(-59px,-40px,10px);-ms-transform:translate3d(-59px,-40px,10px);transform:translate3d(-59px,-40px,10px);}/*!sc*/
+  .overlayKey.Pan.gamepad::before,.overlayKey.Pan.gamepad::after{display:none;}/*!sc*/
+  .overlayKey.Pan.gamepad .overlayKeyValue{width:auto;height:auto;padding:10px;}/*!sc*/
+  .overlayKey.Pan.gamepad .overlayKeyValue::before{display:none;}/*!sc*/
+  .overlayKey.Pan .overlayKeyValue{width:40px;height:40px;border-radius:50%;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;position:relative;z-index:1;-webkit-transition:box-shadow 0.3s ease-in-out;transition:box-shadow 0.3s ease-in-out;}/*!sc*/
+  .overlayKey.Pan .overlayKeyValue::before{content:"";position:absolute;width:52px;height:52px;left:0;right:0;top:0;bottom:0;border:1px solid white;border-radius:50%;-webkit-transform:translate3d(-8px,-8px,10px);-ms-transform:translate3d(-8px,-8px,10px);transform:translate3d(-8px,-8px,10px);}/*!sc*/
+  .overlayKeyValue{display:block;font-size:12px;line-height:1.1;border-radius:9px;padding:2px 6px;background-color:rgba(8,10,31,0.85);border:1px solid #f7faff;position:relative;white-space:nowrap;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);color:#f7faff;}/*!sc*/
+  .overlayKeyValue svg{width:16px;height:23px;}/*!sc*/
+  .overlayKeyValue.DpadImage{background:none;border:none;}/*!sc*/
+  .overlayKeyValue.DpadImage img{width:26px;}/*!sc*/
+  .simplebar-scrollbar:before{background-color:rgba(255,255,255,0.5);top:30px;bottom:20px;right:5px;}/*!sc*/
+  .Toastify__toast-container--top-center{top:100px;}/*!sc*/
+  .Toastify__toast-theme--colored.Toastify__toast--default{background-color:rgba(0,0,0,0.8);border:1px solid rgba(255,255,255,0.2);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border-radius:4px;}/*!sc*/
+  .Toastify__toast-theme--colored.Toastify__toast--default .Toastify__toast-body{font-size:16px;-webkit-letter-spacing:0.5px;-moz-letter-spacing:0.5px;-ms-letter-spacing:0.5px;letter-spacing:0.5px;line-height:1.5em;}/*!sc*/
+  .Toastify__toast-theme--colored.Toastify__toast--default .Toastify__toast-body div{text-align:center;color:#ffffff;}/*!sc*/
+  .Toastify__toast-theme--colored.Toastify__toast--default .Toastify__toast-body div > kbd{color:#0B0223;background:#EEE3D9;padding:6px 10px;border:1px solid;margin:0 2px;font-weight:500;font-size:14px;line-height:19px;border-radius:4px;}/*!sc*/
+  .Toastify__toast-container.Toastify__toast-container--top-center{width:420px;}/*!sc*/
+  .Toastify__close-button--colored{display:none;}/*!sc*/
+  .select-container{margin:8px 0 0 0;}/*!sc*/
+  .select-container .select__control{cursor:pointer;background:rgba(255,255,255,0.1);border:none;}/*!sc*/
+  .select-container .select__indicator-separator{display:none;}/*!sc*/
+  .select-container .select__placeholder,.select-container .select__single-value{color:rgba(255,255,255,0.6);font-size:14px;}/*!sc*/
+  .select-container .select__menu{color:rgba(255,255,255,0.6);background:#444;}/*!sc*/
+  .select-container .select__option:hover{color:#aaa;background:rgba(0,0,0,.4);cursor:pointer;}/*!sc*/
+  .icon-gamepad.null{position:relative;}/*!sc*/
+  .icon-gamepad.null:after{content:'';border:2px;height:29px;width:1.5px;background:currentColor;position:absolute;-webkit-transform:rotate(40deg);-ms-transform:rotate(40deg);transform:rotate(40deg);left:10px;top:-4px;}/*!sc*/
+  data-styled.g20[id="sc-global-bkPiKW1"]{content:"sc-global-bkPiKW1,"}/*!sc*/
+  </style><style data-href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">@font-face{fo
