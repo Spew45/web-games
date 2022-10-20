@@ -1,1 +1,8 @@
 test - add links below iframes to other games
+
+fix game image links:
+    - Subway Surfers
+    - Gun Mayhem 2
+    - Smash Karts
+    
+    +- Everything Else
