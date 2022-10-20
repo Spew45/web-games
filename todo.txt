@@ -6,3 +6,9 @@ fix game image links:
     - Smash Karts
     
     +- Everything Else
+
+
+
+add a summary below the games like unblocked games 76 and 66
+
+add a title above the game on what game it is
