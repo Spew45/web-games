@@ -12,3 +12,6 @@ fix game image links:
 add a summary below the games like unblocked games 76 and 66
 
 add a title above the game on what game it is
+
+find new pattern for background
+fix background in photopea
