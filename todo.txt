@@ -1,17 +1,7 @@
-test - add links below iframes to other games
-
-fix game image links:
-    - Subway Surfers
-    - Gun Mayhem 2
-    - Smash Karts
-    
-    +- Everything Else
-
-
+|| test - add links below iframes to other games
 
 add a summary below the games like unblocked games 76 and 66
 
-add a title above the game on what game it is
+|| add a title above the game on what game it is
 
-find new pattern for background
-fix background in photopea
+|| find new pattern for background
