@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<link rel="icon" type="image/x-icon" href="https://spew45.github.io/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+
+<body style="background-color: #a8dadc; background: url(https://spew45.github.io/web-games/images/subtle-prism2.png); background-repeat: no-repeat; background-size: 1400px 1400px; background-position: center; background-attachment: fixed;">
+<style>
+.padding {
+    padding-top: 25px;
+} 
+.text {
+    position: absolute;
+    top: 3px;
+    left: 25px;
+}
+.border {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #000;
+    width: 70px;
+    height: 700px;
+    border: none;
+    padding: 50px;
+}
+.button {
+  border: none;
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.images {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+.header {
+  padding: 0px;
+  text-align: center;
+  background: #000;
+  color: white;
+  font-size: 30px;
+  position: absolute;
+}
+.button1 {background-color: #000;} /* Green */
+</style>
+
+<title>Classes</title>
+
+<!--<div class="header">
+<p align="center"><img src="../images/pattern.png" style="width: 1500px; height: 700px; object-fit: cover;"></p>
+</div>-->
+
+<div class="padding">
+<p align="center">
+  <h3 style="font-family: 'Roboto Condensed', sans-serif; text-align: center; font-size: 38px; color: #000;">Wheelie Bike 2</h3>
+  <p align="center"><iframe src="https://html5.gamedistribution.com/24ee58d1f7414de5b61f145341c7cfaa/?gd_sdk_referrer_url=https%3A%2F%2Fwww.y8.com%2Fgames%2Fwheelie_bike_2&key=y8&value=default" style="height: 500px; width: 650px; border: 6px solid #fff; border-radius: 15px;" id="iframe"></iframe>
+</div>
+
+<p align="center"><button class="button button1" onclick="openFullscreen();">Fullscreen</button>
+
+    <script>
+    var elem = document.getElementById("iframe");
+    function openFullscreen() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+    }
+    </script>
+    </p>
+
+<div class="border"></div>
+
+<div class="images">
+<a href="../game-pages/wheelie-bike.html"><img src="../images/wheelie-bike.png" width="135" height="135" hspace="3" vspace="4" style="border-radius: 0px;  display: inline; border: 4px solid #fff; border-radius: 25px;" target="_blank"></a><br>
+<a href="../game-pages/flappybird.html"><img src="../images/flappybird.png" width="135" height="135" hspace="3" vspace="4" style="border-radius: 0px;  display: inline; border: 4px solid #fff; border-radius: 25px;" target="_blank"></a><br>
+<a href="../game-pages/subway-surfers.html"><img src="../images/subway-surfers.png" width="135" height="135" hspace="3" vspace="4" style="border-radius: 0px;  display: inline; border: 4px solid #fff; border-radius: 25px;" target="_blank"></a><br>
+<a href="../game-pages/slope.html"><img src="../images/slope.png" width="135" height="135" hspace="3" vspace="4" style="border-radius: 0px;  display: inline; border: 4px solid #fff; border-radius: 25px;" target="_blank"></a><br>
+<a href="../game-pages/yohoho.html"><img src="../images/yohoho.png" width="135" height="135" hspace="3" vspace="4" style="border-radius: 0px;  display: inline; border: 4px solid #fff; border-radius: 25px;" target="_blank"></a>
+</div>

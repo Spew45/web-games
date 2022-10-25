@@ -9,4 +9,5 @@
 || Pixel Shooter
 || Retro Bowl
 || Slope
+|| Smash Karts
 || Snowball IO
