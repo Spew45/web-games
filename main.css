@@ -48,3 +48,7 @@
     left: 4px;
 }
 .button1 {background-color: #000;} /* Green */
+embed {
+    width: 200px;
+    height: 1000px;
+}
