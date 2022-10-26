@@ -52,3 +52,6 @@ embed {
     width: 200px;
     height: 600px;
 }
+iframe {
+    height: 500px; width: 650px; border: 6px solid #fff; border-radius: 15px;
+}
