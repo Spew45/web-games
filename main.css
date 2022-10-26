@@ -1,0 +1,50 @@
+.padding {
+    padding-top: 25px;
+} 
+.text {
+    position: absolute;
+    top: 3px;
+    left: 25px;
+}
+.border {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #000;
+    width: 70px;
+    height: 700px;
+    border: none;
+    padding: 50px;
+    border-radius: 10px;
+}
+.button {
+  border: none;
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.images {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+.header {
+  padding: 0px;
+  text-align: center;
+  background: #000;
+  color: white;
+  font-size: 30px;
+  position: absolute;
+}
+.padding2 {
+    position: absolute;
+    top: 795px;
+    left: 4px;
+}
+.button1 {background-color: #000;} /* Green */
