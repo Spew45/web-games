@@ -33,6 +33,8 @@
     position: absolute;
     top: 12px;
     left: 10px;
+    border-radius: 0px;
+    display: inline; border: 4px solid #fff; border-radius: 25px; border-radius: 0px;
 }
 .header {
   padding: 0px;
