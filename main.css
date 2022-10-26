@@ -47,5 +47,6 @@
     top: 795px;
     left: 4px;
     height: 20px;
+    overflow: visible;
 }
 .button1 {background-color: #000;} /* Green */
