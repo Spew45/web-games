@@ -55,3 +55,6 @@ embed {
 .h3text1 {
     padding-top: 1%;
 }
+images:hover {
+    transform: scale(1.1);
+}
