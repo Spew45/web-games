@@ -11,8 +11,8 @@
     top: 0px;
     left: 0px;
     background-color: #000;
-    width: 50px;
-    height: 600px;
+    width: 70px;
+    height: 700px;
     border: none;
     padding: 50px;
     border-radius: 10px;
@@ -29,14 +29,10 @@
   border-radius: 8px;
   font-family: 'Roboto Condensed', sans-serif;
 }
-img {
-    transition: all .2s ease-in-out;
+.images {
     position: absolute;
     top: 12px;
     left: 10px;
-    display: inline; 
-    border: 4px solid #fff; 
-    border-radius: 25px;
 }
 .header {
   padding: 0px;
@@ -48,7 +44,7 @@ img {
 }
 .padding2 {
     position: absolute;
-    top: 705px;
+    top: 795px;
     left: 4px;
 }
 .button1 {background-color: #000;} /* Green */
@@ -59,12 +55,6 @@ embed {
 .h3text1 {
     padding-top: 1%;
 }
-img:hover { 
-    transform: scale(1.1); 
-}
-iframe {
-  height: 498px; 
-  width: 650px; 
-  border: 6px solid #fff; 
-  border-radius: 15px;
+images:hover {
+    transform: scale(1.1);
 }
