@@ -68,3 +68,6 @@ iframe {
   border: 6px solid #fff; 
   border-radius: 15px;
 }
+h3 {
+    font-family: 'Roboto Condensed', sans-serif; text-align: center; font-size: 38px; color: #000;
+}
