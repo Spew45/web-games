@@ -71,7 +71,6 @@ iframe {
 h3 {
     font-family: 'Roboto Condensed', sans-serif; text-align: center; font-size: 38px; color: #000;
 }
-<<<<<<< HEAD
 figcaption {
     text-align: center; 
     background-color: #f0f0f0; 
@@ -82,15 +81,3 @@ figcaption {
     margin-top: 50px;
     width: 100%;
 }
-=======
-figcaption {
-    text-align: center; 
-    background-color: #f0f0f0;
-    border: 5px solid #000;
-    border-radius: 10px;
-    padding: 60px; 
-    font-family: 'Roboto Condensed', sans-serif;
-    margin-top: 40px;
-    width: 100%; 
-}
->>>>>>> d46af4adaf307c79c0c26e7b7ba89bcc23b3032e
