@@ -63,8 +63,8 @@ img:hover {
     transform: scale(1.1); 
 }
 iframe {
-  height: 498px; 
-  width: 650px; 
+  height: 598px; /* Old 498px */
+  width: 750px;  /* Old 650px */
   border: 6px solid #fff; 
   border-radius: 15px;
 }
