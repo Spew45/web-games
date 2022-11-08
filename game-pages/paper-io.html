@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<link rel="icon" type="image/x-icon" href="../images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+<meta charset="UTF-8">
+
+<body style="background-color: #a8dadc; background: url(../images/subtle-prism2.png); background-repeat: no-repeat; background-size: 1400px 1400px; background-position: center; background-attachment: fixed;">
+
+<title>Classes</title>
+
+<div class="padding">
+<p align="center">
+  <h3>Paper.io</h3>
+  <p align="center"><iframe src="https://paper-io.com/" id="iframe"></iframe>
+</div>
+
+<p align="center"><button class="button button1" onclick="openFullscreen();">Fullscreen</button>
+
+    <script>
+    var elem = document.getElementById("iframe");
+    function openFullscreen() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+    }
+    </script>
+    </p>
+
+<div class="border"></div>
+
+<a href="../game-pages/snowball-io.html"><img src="../images/snowball-io.png" width="115" height="115" hspace="3" vspace="4" target="_blank"></a><br>
+<a href="../game-pages/basket-random.html"><img src="../images/basket-random.png" width="115" height="115" hspace="3" vspace="4" style="margin-top: 140px;" target="_blank"></a><br>
+<a href="../game-pages/eggy-car.html"><img src="../images/eggy-car.png" width="115" height="115" hspace="3" vspace="4" style="margin-top: 275px;" target="_blank"></a><br>
+<a href="../game-pages/slope.html"><img src="../images/slope.png" width="115" height="115" hspace="3" vspace="4" style="margin-top: 410px;" target="_blank"></a><br>
+<a href="../game-pages/subway-surfers.html"><img src="../images/subway-surfers.png" width="115" height="115" hspace="3" vspace="4" style="margin-top: 545px;" target="_blank"></a>
+</div>
+
+<div class="padding2">
+<embed src="../dump/game-text.html">
+</div>
