@@ -11,8 +11,8 @@
     top: 0px;
     left: 0px;
     background-color: #000;
-    width: 70px;
-    height: 700px;
+    width: 50px;
+    height: 600px;
     border: none;
     padding: 50px;
     border-radius: 10px;
@@ -44,7 +44,7 @@
 }
 .padding2 {
     position: absolute;
-    top: 795px;
+    top: 705px;
     left: 4px;
 }
 .button1 {background-color: #000;} /* Green */
@@ -55,6 +55,29 @@ embed {
 .h3text1 {
     padding-top: 1%;
 }
-images:hover {
-    transform: scale(1.1);
+img {
+    transition: all .2s ease-in-out;
+    display: inline;
+    border: 4px solid #fff;
+    border-radius: 25px;
+}
+img:hover {
+    transform: scale(1.14);
+}
+@media (max-width: 480px) {
+    body {
+        background-image: url(../images/subtle-prism2.png);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    body {
+        background-image: url(../images/subtle-prism2.png);
+    }
+}
+
+@media (min-width: 1025px) {
+	body {
+		background-image: url(../images/subtle-prism2.png);
+	}
 }
