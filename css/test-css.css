@@ -56,6 +56,7 @@ embed {
     padding-top: 1%;
 }
 img {
+    transition: all .2s ease-in-out;
     display: inline;
     border: 4px solid #fff;
     border-radius: 25px;
