@@ -58,3 +58,20 @@ embed {
 images:hover {
     transform: scale(1.14);
 }
+@media (max-width: 480px) {
+    body {
+        background-image: url(../images/subtle-prism2.png);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    body {
+        background-image: url(../images/subtle-prism2.png);
+    }
+}
+
+@media (min-width: 1025px) {
+	body {
+		background-image: url(../images/subtle-prism2.png);
+	}
+}
