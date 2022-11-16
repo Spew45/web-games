@@ -55,7 +55,7 @@ embed {
 .h3text1 {
     padding-top: 1%;
 }
-images:hover {
+img:hover {
     transform: scale(1.14);
 }
 @media (max-width: 480px) {
