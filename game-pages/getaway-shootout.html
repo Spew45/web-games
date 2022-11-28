@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<link rel="icon" type="image/x-icon" href="../images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+<meta charset="UTF-8">
+
+<body style="background-color: #a8dadc; background: url(../images/subtle-prism2.png); background-repeat: no-repeat; background-size: vw vh; background-position: center center; background-attachment: fixed;">
+
+<title>Classes</title>
+
+<div class="padding">
+<p align="center">
+  <h3>Getaway Shootout</h3>
+  <p align="center"><iframe src="https://www.twoplayergames.org/gameframe/getaway-shootout/" id="iframe"></iframe>
+</div>
+
+<p align="center"><button class="button button1" onclick="openFullscreen();">Fullscreen</button>
+
+    <script>
+    var elem = document.getElementById("iframe");
+    function openFullscreen() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+    }
+    </script>
+    </p>
+
+<div class="border"></div>
+
+<a href="../game-pages/gun-mayhem-2-more-mayhem.html"><img src="../images/gun-mayhem-2-more-mayhem.png" width="115" height="115" hspace="3" vspace="4" target="_parent"></a><br>
+<a href="../game-pages/pixel-shooter.html"><img src="../images/pixel-shooter.png" width="115" height="115" hspace="3" vspace="4" style="margin-top: 140px;" target="_parent"></a><br>
+<a href="../game-pages/mslug.html"><img src="../images/metal-slug-gba.png" width="115" height="115" hspace="3" vspace="4" style="margin-top: 275px;" target="_parent"></a><br>
+<a href="../game-pages/yohoho.html"><img src="../images/yohoho.png" width="115" height="115" hspace="3" vspace="4" style="margin-top: 410px;" target="_parent"></a><br>
+<a href="../game-pages/kirka.html"><img src="../images/kirka.png" width="115" height="115" hspace="3" vspace="4" style="margin-top: 545px;" target="_parent"></a>
+</div>
+
+<div class="padding2">
+<embed src="../dump/game-text.html">
+</div>
